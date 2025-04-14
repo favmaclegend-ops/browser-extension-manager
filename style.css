@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  color: hsl(0, 0%, 100%);
+  font-family: 'Noto Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+/* Light mode styles */
+body.light-mode {
+  background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+  color: hsl(0, 0%, 10%);
+}
+
+body.light-mode .header {
+  background-color: hsl(200, 60%, 99%);
+}
+
+body.light-mode .header button {
+  background-color: hsl(200, 60%, 99%);
+  color: hsl(0, 0%, 10%);
+}
+
+body.light-mode .header button:hover {
+  background-color: hsl(200, 60%, 99%);
+}
+
+body.light-mode .information button {
+  background-color: hsl(200, 60%, 99%);
+  color: hsl(0, 0%, 10%);
+}
+
+body.light-mode .information button:hover {
+  background-color: hsl(3, 86%, 64%);
+  color: hsl(0, 0%, 100%);
+  /* Optional: Change text color for better contrast */
+}
+
+body.light-mode .extensioncards {
+  background-color: hsl(200, 60%, 99%);
+  color: hsl(0, 0%, 10%);
+}
+
+body.light-mode .extensioncards button:hover {
+  background-color: hsl(3, 86%, 64%);
+  color: hsl(0, 0%, 100%);
+}
+
+body.light-mode .cardcontainer {
+
+  color: hsl(0, 0%, 10%);
+}
+
+body.light-mode .cardcontainer button {
+  background-color: hsl(0, 0%, 78%);
+  color: hsl(0, 0%, 10%);
+
+}
+
+body.light-mode .cardcontainer button:hover {
+  background-color: hsl(3, 86%, 64%);
+  color: hsl(0, 0%, 100%);
+  /* Optional: Change text color for better contrast */
+}
+
+body.light-mode .slider {
+  background-color: hsl(0, 0%, 78%);
+
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(226, 11%, 37%);
+  padding: 10px 10px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 30px;
+}
+
+.header img#logo {
+  height: 40px;
+}
+
+.header button {
+  background-color: hsl(225, 23%, 24%);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.information {
+  display: flex;
+  justify-content: flex-start;
+  /* Align content to the left */
+  align-items: center;
+  /* Align items vertically in the center */
+  margin: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  gap: 10px;
+  /* Add spacing between the heading and buttons */
+}
+
+.information h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.information button {
+  background-color: hsl(226, 11%, 37%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.information button:hover {
+  background-color: hsl(3, 71%, 56%);
+}
+
+.cardcontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.extensioncards {
+  background-color: hsl(225, 23%, 24%);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  color: hsl(0, 0%, 100%);
+  height: 150px;
+  display: flex;
+  /* Use flexbox for layout */
+  flex-direction: column;
+  /* Stack content vertically */
+  justify-content: space-between;
+  /* Space content and toggle switch apart */
+  position: relative;
+  /* Ensure toggle switch stays in place */
+}
+
+.extensioncards img {
+  height: 40px;
+  /* Adjust image size to fit better */
+  margin-bottom: 10px;
+  /* Reduce spacing */
+}
+
+.extensioncards h2 {
+  font-size: 16px;
+  /* Adjust font size */
+  font-weight: 700;
+  margin-bottom: 5px;
+  /* Reduce spacing */
+  flex-basis: 100%;
+}
+
+.extensioncards p {
+  font-size: 12px;
+  /* Adjust font size */
+  line-height: 1.4;
+  /* Adjust line height for better fit */
+  margin: 0;
+  flex-basis: 100%;
+  /* Remove default margins */
+}
+
+/* Toggle Switch */
+.switch {
+  position: absolute;
+  /* Position toggle switch relative to the card */
+  bottom: 20px;
+  /* Distance from the bottom of the card */
+  right: 20px;
+  /* Distance from the right of the card */
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(226, 11%, 37%);
+  /* Red for "off" */
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: hsl(3, 86%, 64%);
+  /* Green for "on" */
+}
+
+input:checked+.slider:before {
+  transform: translateX(20px);
+}
+
+.remove-btn {
+  background-color: hsl(226, 11%, 37%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin-right: 220px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: hsl(3, 71%, 56%);
+}
+
+.cardcontent {
+  display: flex;
+  /* Use flexbox for layout */
+  flex-direction: row;
+  /* Arrange icon and text in a row */
+  align-items: flex-start;
+  /* Align items to the top */
+  gap: 10px;
+  /* Add spacing between the icon and text */
+  width: 100%;
+  /* Ensure content spans the full width */
+  height: auto;
+  /* Adjust height based on content */
+  margin-bottom: 30px;
+}
+
+.cardcontent img {
+  height: 40px;
+  /* Adjust icon size */
+  margin: 0;
+  /* Remove unnecessary margins */
+  flex-shrink: 0;
+  /* Prevent the image from shrinking */
+}
+
+.cardcontent .text-content {
+  display: flex;
+  flex-direction: column;
+  /* Stack the name and description vertically */
+  justify-content: flex-start;
+  /* Align content to the top */
+  align-items: flex-start;
+  /* Align text to the left */
+  gap: 5px;
+  /* Add spacing between the name and description */
+  width: 100%;
+  /* Ensure text spans the remaining width */
+}
+
+.cardcontent h2 {
+  font-size: 16px;
+  /* Adjust font size */
+  font-weight: 700;
+  margin: 0;
+  /* Remove default margins */
+  line-height: 1.2;
+  /* Adjust line height for better spacing */
+}
+
+.cardcontent p {
+  font-size: 12px;
+  /* Adjust font size */
+  line-height: 1.4;
+  /* Adjust line height for readability */
+  margin: 0;
+  /* Remove default margins */
+  text-align: left;
+  /* Ensure text is aligned to the left */
+}
+
+br {
+  display: block;
+  flex-basis: 100%;
+
+}
