@@ -317,5 +317,134 @@ input:checked+.slider:before {
 br {
   display: block;
   flex-basis: 100%;
+}
 
+/* Tablet Breakpoint (768px and below) */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .header {
+    margin-bottom: 20px;
+    padding: 8px 8px;
+  }
+
+  .header img#logo {
+    height: 35px;
+  }
+
+  .information {
+    flex-wrap: wrap;
+    margin: 15px 0;
+    gap: 8px;
+  }
+
+  .information h1 {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .information button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .cardcontainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .extensioncards {
+    height: auto;
+    min-height: 150px;
+    padding: 15px;
+  }
+
+  .remove-btn {
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+}
+
+/* Mobile Breakpoint (480px and below) */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .header {
+    margin-bottom: 15px;
+    padding: 6px 6px;
+  }
+
+  .header img#logo {
+    height: 30px;
+  }
+
+  .information {
+    margin: 12px 0;
+    gap: 6px;
+  }
+
+  .information h1 {
+    font-size: 18px;
+  }
+
+  .information button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .cardcontainer {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .extensioncards {
+    height: auto;
+    min-height: 140px;
+    padding: 12px;
+  }
+
+  .extensioncards img {
+    height: 35px;
+  }
+
+  .cardcontent {
+    margin-bottom: 40px;
+  }
+
+  .cardcontent img {
+    height: 35px;
+  }
+
+  .cardcontent h2 {
+    font-size: 14px;
+  }
+
+  .cardcontent p {
+    font-size: 11px;
+  }
+
+  .remove-btn {
+    padding: 8px 12px;
+    font-size: 11px;
+    margin-right: 0;
+    margin-bottom: 45px;
+  }
+
+  .switch {
+    width: 36px;
+    height: 18px;
+  }
+
+  .slider:before {
+    height: 12px;
+    width: 12px;
+  }
+
+  input:checked+.slider:before {
+    transform: translateX(18px);
+  }
 }
